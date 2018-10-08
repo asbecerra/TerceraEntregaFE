@@ -37,9 +37,13 @@ require_once("$locr/db.php");
 
 if(!isset($_POST['noflush'])) {
 	require_once("$locr/version.php");
-	echo "<html><head><title>Admin's Page</title>\n";
+	echo "<html><head><title>BOCA Administrador en línea de Olimpiadas de Programación - Admin</title>\n";
 	echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
 	echo "<link rel=stylesheet href=\"$loc/Css.php\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/estilos.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/formularios.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/boton.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/desplegables.css\" type=\"text/css\">\n";
 }
 
 if(!ValidSession()) {
@@ -89,4 +93,5 @@ if(!isset($_POST['noflush'])) {
 	echo " </tr>\n"; 
 	echo "</table>\n";
 }
+
 ?>
