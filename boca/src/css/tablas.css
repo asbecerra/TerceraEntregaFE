@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+/*ESTILOS PARA TABLA*/  
+#contenedor_tabla{
+	margin: 15px auto;
+	width: 400px
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+tbody tr:hover{
+	background-color: #366474;
+	color: white;
+}
+th{
+	background-color: #245;
+	color: white;
+}  
+th,td{
+	padding: 10px;	  
+}
+
+thead{
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tbody{
+	color: black;
+}
