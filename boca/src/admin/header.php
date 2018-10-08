@@ -62,7 +62,57 @@ if ((isset($_GET["Submit1"]) && $_GET["Submit1"] == "Transfer") ||
 
 if(!isset($_POST['noflush'])) {
 	echo "</head><body id=\"body\"><table border=1 width=\"100%\">\n";
-	echo "<tr><td nowrap bgcolor=\"eeee00\" align=center>";
+	echo "<header>\n";
+	echo "<img src=\"../img/banner.jpg\" width=\"80%\" left=\"20%\">\n";
+	echo "<div id=\"header\">\n";
+	echo "<ul class=\"nav\">\n";
+	echo "<li><a href=\"Admin.html\">Home</a></li>\n";
+	echo "<li><a href=\"\">Competition</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=\"runs.html\">Runs</a></li>\n";
+			echo "<li><a href=\"score.html\">Score</a></li>\n";
+			echo "<li><a href=\"carif.html\">Clarificatios</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";
+	echo "<li><a href=\"\">Users</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=\"problems.html\">Problems</a></li>\n";
+			echo "<li><a href=\"answers.html\">Answers</a></li>\n";
+			echo "<li><a href=\"misc.html\">Misc</a></li>\n";
+			echo "<li><a href=\"task.html\">Task</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";		
+	echo "<li><a href=\"\">Options</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=\"site.html\">Site</a></li>\n";
+			echo "<li><a href=\"contest.html\">Contest</a></li>\n";
+			echo "<li><a href=\"logs.html\">Logs</a></li>\n";
+			echo "<li><a href=\"\">Languajes</a></li>\n";
+			echo "<li><a href=\"\">BackUps</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";
+	echo "<li><a href=\"\">Reports</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=\"sb.html\">Scoreboard</a></li>\n";
+			echo "<li><a href=\"detsb.html\">Detailed Scoreboard</a></li>\n";
+			echo "<li><a href=\"intsb.html\">Interactive Scoreboard</a></li>\n";
+			echo "<li><a href=\"delsb.html\">Delayed Scoreboard</a></li>\n";
+			echo "<li><a href=\"runlist.html\">Run List</a></li>\n";
+			echo "<li><a href=\"clarlist.html\">Clarification List</a></li>\n";
+			echo "<li><a href=\"tasklist.html\">Task List</a></li>\n";
+			echo "<li><a href=\"sitestar.html\">Site Star/Stop Logs</a></li>\n";
+			echo "<li><a href=\"icpcfile.html\">ICPC File</a></li>\n";
+			echo "<li><a href=\"webcast.html\">WebCast File</a></li>\n";
+			echo "<li><a href=\"s4ris.html\">S4RIS File</a></li>\n";
+			echo "<li><a href=\"stat.html\">Statistics</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";
+	echo "<li class=\"item-r\"><a href=\"\">Logout</a></li>\n";
+	echo "</ul>\n";
+	echo "</div>\n";
+	echo "</header>\n";
+
+	/*echo "<tr><td nowrap bgcolor=\"eeee00\" align=center>";
 	echo "<img src=\"../images/smallballoontransp.png\" alt=\"\">";
 	echo "<font color=\"#000000\">BOCA</font>";
 	echo "</td><td bgcolor=\"#eeee00\" width=\"99%\">\n";
@@ -91,7 +141,7 @@ if(!isset($_POST['noflush'])) {
 	echo "  <td align=center><a class=menu style=\"font-weight:bold\" href=option.php>Options</a></td>\n";
 	echo "  <td align=center><a class=menu style=\"font-weight:bold\" href=$loc/index.php>Logout</a></td>\n";
 	echo " </tr>\n"; 
-	echo "</table>\n";
+	echo "</table>\n";*/
 }
 
 ?>
