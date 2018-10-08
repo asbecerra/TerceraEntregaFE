@@ -44,6 +44,7 @@ if(!isset($_POST['noflush'])) {
 	echo "<link rel=stylesheet href=\"../css/formularios.css\" type=\"text/css\">\n";
 	echo "<link rel=stylesheet href=\"../css/boton.css\" type=\"text/css\">\n";
 	echo "<link rel=stylesheet href=\"../css/desplegables.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/tablas.css\" type=\"text/css\">\n";
 }
 
 if(!ValidSession()) {
