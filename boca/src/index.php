@@ -62,13 +62,13 @@ require_once('version.php');
 <link rel="stylesheet" href="css/boton.css" type="text/css">
 <script language="JavaScript" src="sha256.js"></script>
 <script language="JavaScript">
-function computeHASH(name, password)
+function computeHASH()
 {
 	var userHASH, passHASH;
-	userHASH = name;
-	passHASH = js_myhash(js_myhash(password)+'<?php echo session_id(); ?>');
-	document.form1.name.value = '';
-	document.form1.password.value = '                                                                                 ';
+	userHASH = document.formIngreso.name.value;
+	passHASH = js_myhash(js_myhash(document.formIngreso.password.value)+'<?php echo session_id(); ?>');
+	document.formIngreso.name.value = '';
+	document.formIngreso.password.value = '                                                                                 ';
 	document.location = 'index.php?name='+userHASH+'&password='+passHASH;
 }
 </script>
@@ -108,18 +108,18 @@ if(function_exists("globalconf") && function_exists("sanitizeVariables")) {
 }
 ?>
 </head>
-<body onload="document.form1.name.focus()">
+<body onload="document.formIngreso.name.focus()">
 <header>
 	<img src="img/banner.jpg" width="80%" left="20%">
 </header>
 <section style="padding: 30px; padding-bottom: 30%">
-	<form method="post" name="formIngreso" >
+<form method="post" name="formIngreso" action="javascript:computeHASH()">
 	<p>Login:</p>
-	<input type="text" class="field" name="login"> <br/>
+	<input type="text" class="field" name="name"> <br/>
 	<p>Password:</p>
 	<input type="password" class="field" name="password"> <br/>
 	<p class="center-content">
-		<input type="submit" class="btn btn-green" value="Login" onclick="javascript:computeHASH(login.value,password.value)">
+		<input type="submit" class="btn btn-green" value="Login" >
 	</p>
 </form>
 </section>
