@@ -93,18 +93,42 @@ if(!isset($_POST['noflush'])) {
 	echo "</li>\n";
 	echo "<li><a href=\"\">Reports</a>\n";
 		echo "<ul class=\"sub\">\n";
-			echo "<li><a href=\"sb.html\">Scoreboard</a></li>\n";
-			echo "<li><a href=\"detsb.html\">Detailed Scoreboard</a></li>\n";
-			echo "<li><a href=\"intsb.html\">Interactive Scoreboard</a></li>\n";
-			echo "<li><a href=\"delsb.html\">Delayed Scoreboard</a></li>\n";
-			echo "<li><a href=\"runlist.html\">Run List</a></li>\n";
-			echo "<li><a href=\"clarlist.html\">Clarification List</a></li>\n";
-			echo "<li><a href=\"tasklist.html\">Task List</a></li>\n";
-			echo "<li><a href=\"sitestar.html\">Site Star/Stop Logs</a></li>\n";
-			echo "<li><a href=\"icpcfile.html\">ICPC File</a></li>\n";
-			echo "<li><a href=\"webcast.html\">WebCast File</a></li>\n";
-			echo "<li><a href=\"s4ris.html\">S4RIS File</a></li>\n";
-			echo "<li><a href=\"stat.html\">Statistics</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=2', ".
+		"'Complete Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=0', ".
+		"'Complete Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Detailed Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=0&hor=0', ".
+		"'Complete Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Interactive Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=1', ".
+		"'Public Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Delayed Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/run.php', ".
+		"'Run List','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Run List</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/clar.php', ".
+		"'Clarification List','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Clarification List</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/task.php', ".
+		"'Task List','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Task List</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/site.php', ".
+		"'Start/Stop Logs','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Site Star/Stop Logs</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/icpc.php', ".
+		"'ICPC File','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">ICPC File</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/webcast.php', ".
+		"'Webcast File','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">WebCast File</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/s4ris.php', ".
+		"'S4ris File','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">S4RIS File</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/stat.php', ".
+		"'Problem Statistics','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Statistics</a></li>\n";
 		echo "</ul>\n";
 	echo "</li>\n";
 	echo "<li class=\"item-r\"><a href=$loc/index.php>Logout</a></li>\n";
