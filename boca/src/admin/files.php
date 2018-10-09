@@ -38,7 +38,9 @@ if (isset($_GET["delete"]) && is_numeric($_GET["delete"])) {
       }
     }
   </script>
+  <br><br>
 <table width="100%" border=1>
+	<thead>
  <tr>
   <td><b>Bkp #</b></td>
   <td><b>Time</b></td>
@@ -46,6 +48,7 @@ if (isset($_GET["delete"]) && is_numeric($_GET["delete"])) {
   <td><b>File</b></td>
   <td><b>Status</b></td>
  </tr>
+ </thead>
 <?php
 $run = DBUserBkps($_SESSION["usertable"]["contestnumber"], -1, -1);
 
@@ -71,7 +74,7 @@ for ($i=0; $i<count($run); $i++) {
 
 }
 echo "</table>";
-if (count($run) == 0) echo "<br><center><b><font color=\"#ff0000\">NO BACKUPS AVAILABLE</font></b></center>";
+if (count($run) == 0) echo "<br><center><b><font color=\"#ECFF00\">NO BACKUPS AVAILABLE</font></b></center>";
 
 ?>
 </body>
