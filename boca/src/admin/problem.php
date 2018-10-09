@@ -429,14 +429,14 @@ To replace the data of a problem, proceed as if it did not exist (data will be r
 		  <form action="/action_page.php">
         <td width="35%" align=right>Color name:</td>
         <td width="40%">
-          <input type="color" name="colorname" value="#ff0000" size="40" maxlength="30"  class="field"/>
+          <input type="color" name="colorname" value="#ff0000" size="40" maxlength="30"  class="field" onchange="getColorValue(colorname.value)"/>
         </td>
         </form>
       </tr>
       <tr>
         <td width="35%" align=right>Color (RGB HTML format):</td>
         <td width="40%">
-          <input type="text" name="color" value="" size="6" maxlength="6"  class="field"/>
+          <input id="rgbTextField" type="text" name="color" value="" size="6" maxlength="6"  class="field" readonly/>
         </td>
       </tr>
     </table>
@@ -446,7 +446,11 @@ To replace the data of a problem, proceed as if it did not exist (data will be r
       <input type="submit" name="Submit3" value="Send" onClick="conf()">
       <input type="reset" name="Submit4" value="Clear">
   </center>
-
+<script language = "javascript">
+	function getColorValue(colorValue) {
+		document.getElementById("rgbTextField").value = colorValue.toUpperCase();
+	}
+</script>
 	 <br><br><br><center>To build a problem package from files, use this link:
       <input type="submit" name="Submit5" value="Build">
 </center>
