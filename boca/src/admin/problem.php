@@ -242,9 +242,10 @@ for ($i=0; $i<count($prob); $i++) {
 	  }
     }
   </script>
-<form name="form0" enctype="multipart/form-data" method="post" action="problem.php">
-<table width="100%" border=1>
+  <section style="padding: 1px; padding-bottom: 1%">
+<table width="60%" border=1>
  <tr>
+<thead>
   <td><b>Problem #</b></td>
   <td><b>Short Name</b></td>
   <td><b>Fullname</b></td>
@@ -254,6 +255,7 @@ for ($i=0; $i<count($prob); $i++) {
 <!--  <td><b>Compare file</b></td>
   <td><b>Timelimit</b></td>-->
   <td><b>Color</b></td>
+  </thead>
  </tr>
 <?php
 for ($i=0; $i<count($prob); $i++) {
@@ -315,7 +317,7 @@ for ($i=0; $i<count($prob); $i++) {
       echo "<img title=\"".$prob[$i]["color"]."\" alt=\"".$prob[$i]["colorname"]."\" width=\"25\" src=\"" . 
 	balloonurl($prob[$i]["color"]) . "\" />\n";
     }
-    echo "<input type=\"text\" name=\"colorname" . $prob[$i]['number'] . "\" value=\"" . $prob[$i]["colorname"] . "\" size=\"10\" maxlength=\"100\" />";
+    echo "<input type=\"text\" name=\"colorname" . $prob[$i]['number'] . "\" value=\"" . $prob[$i]["colorname"] . "\" size=\"20\" maxlength=\"50\" / class=\"field\">";
     echo "<input type=\"text\" name=\"color" . $prob[$i]['number'] . "\" value=\"" . $prob[$i]["color"]. "\" size=\"6\" maxlength=\"6\" />";
     echo "<input type=\"submit\" name=\"SubmitProblem" . $prob[$i]["number"] . "\" value=\"Update\">";
   } else echo "&nbsp;";
@@ -331,9 +333,8 @@ if (count($prob) == 0) echo "<br><center><b><font color=\"#ff0000\">NO PROBLEMS 
 WARNING: deleting a problem will remove EVERYTHING related to it.<br>
 It is NOT recommended to change anything while the contest is running.<br>
 To import a problem, fill in the following fields.<br>
-To replace the data of a problem, proceed as if it did not exist (data will be replaced without removing it).</b></center>
+To replace the data of a problem, proceed as if it did not exist (data will be replaced without removing it).</b></center><br><br>
 
-<form name="form1" enctype="multipart/form-data" method="post" action="problem.php">
   <input type=hidden name="confirmation" value="noconfirm" />
   <script language="javascript">
     function conf() {
@@ -373,14 +374,14 @@ To replace the data of a problem, proceed as if it did not exist (data will be r
     <table border="0">
       <tr>
         <td width="35%" align=right>Number:</td>
-        <td width="65%">
-          <input type="text" name="problemnumber" value="" size="20" maxlength="20" />
+        <td width="40%">
+          <input type="text" name="problemnumber" value="" size="20" maxlength="20" class="field"/>
         </td>
       </tr>
       <tr>
 	 <td width="35%" align=right>Short Name (usually a letter, no spaces):</td>
-        <td width="65%">
-          <input type="text" name="problemname" value="" size="20" maxlength="20" />
+        <td width="40%">
+          <input type="text" name="problemname" value="" size="20" maxlength="20" class="field" />
         </td>
       </tr>
 <!--
@@ -405,8 +406,8 @@ To replace the data of a problem, proceed as if it did not exist (data will be r
 -->
       <tr>
 	 <td width="35%" align=right>Problem package (ZIP):</td>
-        <td width="65%">
-          <input type="file" name="probleminput" value="" size="40" />
+        <td width="40%">
+          <input type="file" name="probleminput" value="" size="40"  class="field"/>
         </td>
       </tr>
 <!--
@@ -426,18 +427,19 @@ To replace the data of a problem, proceed as if it did not exist (data will be r
 -->
       <tr>
         <td width="35%" align=right>Color name:</td>
-        <td width="65%">
-          <input type="text" name="colorname" value="" size="40" maxlength="100" />
+        <td width="40%">
+          <input type="text" name="colorname" value="" size="40" maxlength="100"  class="field"/>
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Color (RGB HTML format):</td>
-        <td width="65%">
-          <input type="text" name="color" value="" size="6" maxlength="6" />
+        <td width="40%">
+          <input type="text" name="color" value="" size="6" maxlength="6"  class="field"/>
         </td>
       </tr>
     </table>
   </center>
+  <br><br>
   <center>
       <input type="submit" name="Submit3" value="Send" onClick="conf()">
       <input type="reset" name="Submit4" value="Clear">
@@ -447,6 +449,6 @@ To replace the data of a problem, proceed as if it did not exist (data will be r
       <input type="submit" name="Submit5" value="Build">
 </center>
 </form>
-
+</section>
 </body>
 </html>
