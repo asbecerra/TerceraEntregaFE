@@ -172,7 +172,9 @@ flow. ARE YOU SURE?")) {
   </script>
   <br><br>
   <center>
+	<section style="padding: 1px; padding-bottom: 1%">
     <table border="0">
+	<thead>
       <tr>
         <td width="35%" align=right>Contest number:</td>
         <td width="65%">
@@ -181,6 +183,8 @@ echo $contest;
 ?>
         </td>
       </tr>
+      </thead>
+      <tbody>
       <tr>
         <td width="35%" align=right>Name:</td>
         <td width="65%">
@@ -278,6 +282,7 @@ echo $contest;
           <input type="text" name="localsite" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestlocalsite"]; ?>" size="4" maxlength="4" />
         </td>
       </tr>
+      </tbody>
     </table>
   </center>
   <center>
@@ -294,7 +299,9 @@ echo $contest;
       <input type="submit" name="Submit3" value="Update" onClick="conf()">
 	   <input type="submit" name="Submit3" value="Become Main Site" onClick="conf3()">
 <?php } ?>
-	   </center>
+</section>
+</center>
+	   
 </form>
 
 </body>
