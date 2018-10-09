@@ -36,12 +36,12 @@ require 'header.php';
     }
    </script>
    <center>
-   <input type="submit" name="Submit1" value="Transfer" onClick="conf()" class="btn"> <hr/>
-   <input type="submit" name="Submit2" value="Transfer all" onClick="conf()" class="btn"> <hr/> 
-   <input type="submit" name="Submit3" value="Transfer scores" class="btn"> <hr/> 
-   <input type="submit" name="Submit4" value="Clear cache" onClick="conf()" class="btn"> <hr/>  
-   <input type="submit" name="Submit5" value="Full clear" onClick="conf2()"class="btn"> <hr/>  
-   <input type="submit" name="Submit6" value="Update BOCA" onClick="conf2()" class="btn"> <hr/>  
+   <input type="submit" name="Submit1" value="Transfer" onClick="conf()" class="btn"> <br/>
+   <input type="submit" name="Submit2" value="Transfer all" onClick="conf()" class="btn"> <br/> 
+   <input type="submit" name="Submit3" value="Transfer scores" class="btn"> <br/> 
+   <input type="submit" name="Submit4" value="Clear cache" onClick="conf()" class="btn"> <br/>  
+   <input type="submit" name="Submit5" value="Full clear" onClick="conf2()"class="btn"> <br/>  
+   <input type="submit" name="Submit6" value="Update BOCA" onClick="conf2()" class="btn"> <br/>  
    <input type="submit" name="Submit7" value="Revert Update" onClick="conf2()" class="btn">  
   </center>
 </form>
