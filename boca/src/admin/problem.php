@@ -242,7 +242,7 @@ for ($i=0; $i<count($prob); $i++) {
 	  }
     }
   </script>
-  <section style="padding: 1px; padding-bottom: 1%">
+  <section style="padding: 3px; padding-bottom: 3%">
 <table width="60%" border=1>
  <tr>
 <thead>

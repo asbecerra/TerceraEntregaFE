@@ -40,8 +40,8 @@ else
  <!--   <td><b>AJ</b></td> -->
 <!--    <td><b><a href="<?php echo $runphp; ?>?order=answer">Answer</a></b></td> -->
  <!--  </tr> -->
- <section style="padding: 5px; padding-bottom: 5%">
- <table width="100%" border="1">
+ <section style="padding: 3x; padding-bottom: 3%">
+ <table width="80%" border="1">
  <thead><tr>
   <td><b>Run #</b></td>
   <td><b>Site</b></td>
@@ -174,7 +174,7 @@ for ($i=0; $i<count($run); $i++) {
 }
 
 echo "</table>";
-if (count($run) == 0) echo "<br><center><b><font color=\"#ff0000\">NO RUNS AVAILABLE</font></b></center>";
+if (count($run) == 0) echo "<br><center><b><font color=\"#ECFF00\">NO RUNS AVAILABLE</font></b></center>";
 else {
 ?>
 

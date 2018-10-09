@@ -387,7 +387,7 @@ if($redo) {
 	  }
 	}
 	$strtmp .= "</table>";
-	if ($n == 0) $strtmp .= "<br><center><b><font color=\"#ff0000\">SCOREBOARD IS EMPTY</font></b></center>";
+	if ($n == 0) $strtmp .= "<br><center><b><font color=\"#ECFF00\">SCOREBOARD IS EMPTY</font></b></center>";
 	else {
 		if(!$des) 
 			if($level>0) $strtmp .= "<br><font color=\"#ff0000\">P.S. Problem names are hidden.</font>";

@@ -42,7 +42,7 @@ if (isset($_POST["Submit3"]) && isset($_POST["answernumber"]) && is_numeric($_PO
 	ForceLoad("answer.php");
 }
 ?>
-<br>
+<br><br>
   <script language="javascript">
     function conf() {
       if (confirm("Confirm?")) {
@@ -62,11 +62,13 @@ if (isset($_POST["Submit3"]) && isset($_POST["answernumber"]) && is_numeric($_PO
     }
   </script>
 <table width="100%" border=1>
+<thead>
  <tr>
   <td><b>Answer #</b></td>
   <td><b>Description</b></td>
   <td><b>Yes/No</b></td>
  </tr>
+ </thead>
 <?php
 $ans = DBGetAnswers($_SESSION["usertable"]["contestnumber"]);
 $n=0;

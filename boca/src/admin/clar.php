@@ -39,19 +39,21 @@ if(isset($_GET["order"]) && $_GET["order"] != "") {
 		$order='';
 }
 ?>
-<br>
+<br><br><br><br>
 <table width="100%" border=1>
+<thead>
  <tr>
-  <td><b><a href="clar.php?order=clar">Clar #</a></b></td>
-  <td><b><a href="clar.php?order=site">Site</a></b></td>
-  <td><b><a href="clar.php?order=user">User</a></b></td>
+  <td><b><a href="clar.php?order=clar" style="color: #FFFFFF">Clar # </a></b></td>
+  <td><b><a href="clar.php?order=site" style="color: #FFFFFF">Site</a></b></td>
+  <td><b><a href="clar.php?order=user" style="color: #FFFFFF">User</a></b></td>
   <td><b>Time</b></td>
-  <td><b><a href="clar.php?order=problem">Problem</a></b></td>
-  <td><b><a href="clar.php?order=status">Status</a></b></td>
-  <td><b><a href="clar.php?order=judge">Judge (Site)</a></b></td>
+  <td><b><a href="clar.php?order=problem" style="color: #FFFFFF">Problem</a></b></td>
+  <td><b><a href="clar.php?order=status" style="color: #FFFFFF">Status</a></b></td>
+  <td><b><a href="clar.php?order=judge" style="color: #FFFFFF">Judge (Site)</a></b></td>
   <td><b>Question</b></td>
   <td><b>Answer</b></td>
  </tr>
+ </thead>
 <?php
 
 if(($s = DBSiteInfo($_SESSION["usertable"]["contestnumber"], $_SESSION["usertable"]["usersitenumber"])) == null)
@@ -64,7 +66,9 @@ else $s["sitejudging"]=$_SESSION["usertable"]["usersitenumber"];
 $clar = DBAllClarsInSites($_SESSION["usertable"]["contestnumber"], $s["sitejudging"], $order);
 
 for ($i=0; $i<count($clar); $i++) {
-  echo " <tr>\n";
+  
+  
+  echo "<tr>\n";
   echo "  <td nowrap><a href=\"claredit.php?clarnumber=".$clar[$i]["number"]."&clarsitenumber=".$clar[$i]["site"] .
        "\">" . $clar[$i]["number"] . "</a></td>\n";
   echo "  <td nowrap>" . $clar[$i]["site"] . "</td>\n";
@@ -105,7 +109,7 @@ for ($i=0; $i<count($clar); $i++) {
 }
 
 echo "</table>";
-if (count($clar) == 0) echo "<br><center><b><font color=\"#ff0000\">NO CLARIFICATIONS AVAILABLE</font></b></center>";
+if (count($clar) == 0) echo "<br><center><b><font color=\"#ECFF00\">NO CLARIFICATIONS AVAILABLE</font></b></center>";
 
 ?>
 </body>
