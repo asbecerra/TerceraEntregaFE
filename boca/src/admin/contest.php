@@ -188,15 +188,13 @@ echo $contest;
       <tr>
         <td width="35%" align=right>Name:</td>
         <td width="65%">
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="name" value="<?php echo $ct["contestname"]; ?>" size="50" maxlength="50" />
+          <input type="text" <?php if(!$main) echo "readonly"; ?> name="name" value="<?php echo $ct["contestname"]; ?>" size="50" maxlength="50" type="text" class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Start date:</td>
-        <td width="65%"> hh:mm
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdateh" value="<?php echo date("H", $ct["conteststartdate"]); ?>" size="2" maxlength="2" />
-          :
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdatemin" value="<?php echo date("i", $ct["conteststartdate"]); ?>" size="2" maxlength="2" />
+        <td width="30%"> 
+          <input type="time" <?php if(!$main) echo "readonly"; ?> name="startdateh" value="<?php echo date("H", $ct["conteststartdate"]) . ":" . date("i", $ct["conteststartdate"]);?>" size="2" maxlength="2" class="field"/>
           &nbsp; &nbsp; dd/mm/yyyy
           <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdated" value="<?php echo date("d", $ct["conteststartdate"]); ?>" size="2" maxlength="2" />
           /
