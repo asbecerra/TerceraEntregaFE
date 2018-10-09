@@ -247,7 +247,7 @@ if($redo) {
 			}
 			$lin = trim($lin[0]);
 			if($lin=='') continue;
-		if($fta) { $fta=false; $strtmp .= "<br><img src=\"$loc/images/smallballoontransp.png\" alt=\"\" onload=\"javascript:toggleGroup($rfi)\"> <b>Available scores:</b> \n"; }
+					if($fta) { $fta=false; $strtmp .= "<br><img src=\"$loc/images/smallballoontransp.png\" alt=\"\" onload=\"javascript:toggleGroup($rfi)\"> <br><br><b>Available scores:</b> \n"; }
             $grname=explode(' ',$lin);
 			$class=1;
 			reset($score);
@@ -283,7 +283,7 @@ if($redo) {
 		}
 	}
 
-	$strtmp .= "<br>\n<table id=\"myscoretable\" width=\"100%\" border=1>\n <tr>\n  <td><b>#</b></td>\n  <td><b>User/Site</b></td>\n  <td><b>Name</b></td>\n";
+	$strtmp .= "<br>\n<table id=\"myscoretable\" width=\"100%\" border=1>\n <thead> <tr>\n  <td><b>#</b></td>\n  <td><b>User/Site</b></td>\n  <td><b>Name</b></td>\n";
 	if(!$des) {
 		if($level>0)
 			$strtmp .= "<td><b>Problems</b></td>";
@@ -292,7 +292,7 @@ if($redo) {
 			$strtmp .= "<td nowrap><b>" . $pr[$i]["problem"] . " &nbsp;</b></td>";
 	} 
 	$strtmp .= "<td><b>Total</b></td>\n";
-	$strtmp .= "</tr>\n";
+	$strtmp .= "</tr> </thead>\n";
 	$n=0;
 	reset($score);
 	while(list($e, $c) = each($score)) {
