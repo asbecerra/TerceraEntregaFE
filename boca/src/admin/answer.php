@@ -100,24 +100,24 @@ if ($n == 0) echo "<br><center><b><font color=\"#ff0000\">NO ANSWERS DEFINED</fo
 	 To insert a new answer, enter the data below.<br>
 	 Note that any changes will overwrite the already defined data.<br><br>
 </b>
-<form name="form1" enctype="multipart/form-data" method="post" action="answer.php">
+
   <input type=hidden name="confirmation" value="noconfirm" />
     <table border="0">
       <tr>
         <td width="35%" align=right>Number:</td>
-        <td width="65%">
-          <input type="text" name="answernumber" value="" size="20" maxlength="20" />
+        <td width="45%">
+          <input type="text" name="answernumber" value="" size="20" maxlength="20" class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Description:</td>
-        <td width="65%">
-          <input type="text" name="answername" value="" size="50" maxlength="50" />
+        <td width="45%">
+          <input type="text" name="answername" value="" size="50" maxlength="50" class="field"/>
         </td>
       </tr>
       <tr>
-        <td width="35%" align=right>Type:</td>
-        <td width="65%">
+        <td width="35%"align=right>Type:</td>
+        <td width="45%">
                 <select name="answeryes">
                 <option selected value="f">No</option>
                 <option value="t">Yes</option>
@@ -126,6 +126,7 @@ if ($n == 0) echo "<br><center><b><font color=\"#ff0000\">NO ANSWERS DEFINED</fo
       </tr>
     </table>
   </center>
+  <br><br>
   <center>
       <input type="submit" name="Submit3" value="Send" onClick="conf()">
       <input type="reset" name="Submit4" value="Clear">
