@@ -308,6 +308,7 @@ if ($main && isset($_FILES["importfile"]) && isset($_POST["Submit"]) && $_POST["
       }
     }
   </script>
+  <section style="padding: 1px; padding-bottom: 1%">
   <center>
     <table border="0">
       <tr>
@@ -337,7 +338,7 @@ if($ct["contestlocalsite"]==$site) echo "(local site)";
       <tr>
         <td width="35%" align=right>Name:</td>
         <td width="65%">
-          <input type="text" name="name" value="<?php echo $st["sitename"]; ?>" size="50" maxlength="50" />
+          <input type="text" name="name" value="<?php echo $st["sitename"]; ?>" size="50" maxlength="50"  class="field"/>
         </td>
       </tr>
 <?php 
@@ -347,7 +348,7 @@ if($ct["contestlocalsite"]==$site) echo "(local site)";
       <tr>
 <td width="35%" align=right>IP (plus boca path):</td>
         <td width="65%">
-          <input type="text" name="ip" value="<?php echo $st["siteip"]; ?>" size="50" maxlength="200" />
+          <input type="text" name="ip" value="<?php echo $st["siteip"]; ?>" size="50" maxlength="200"  class="field"/>
         </td>
       </tr>
 <?php
@@ -367,16 +368,11 @@ if($ct["contestlocalsite"]==$site) echo "(local site)";
 <?php
 echo "        <td nowrap width=\"35%\" align=right>Start date (contest=" . dateconv($ct["conteststartdate"]) . "):</td>";
 ?>
-        <td width="65%"> hh:mm
-          <input type="text" name="startdateh" value="<?php echo date("H", $st["sitestartdate"]); ?>" size="2" maxlength="2" />
-          :
-          <input type="text" name="startdatemin" value="<?php echo date("i", $st["sitestartdate"]); ?>" size="2" maxlength="2" />
-            dd/mm/yyyy
-          <input type="text" name="startdated" value="<?php echo date("d", $st["sitestartdate"]); ?>" size="2" maxlength="2" />
-          /
-          <input type="text" name="startdatem" value="<?php echo date("m", $st["sitestartdate"]); ?>" size="2" maxlength="2" />
-          /
-          <input type="text" name="startdatey" value="<?php echo date("Y", $st["sitestartdate"]); ?>" size="4" maxlength="4" />
+        <td width="65%">
+          <input type="time" name="startdateh" value="<?php echo date("H", $st["sitestartdate"]) . ":" . date("i", $st["sitestartdate"]); ?>" size="2" maxlength="2"  class="field"/>
+    
+          <input type="date" name="startdated" value="<?php echo date("Y", $st["sitestartdate"]) . "-" . date("m", $st["sitestartdate"]) . "-" . date("d", $st["sitestartdate"]); ?>" size="2" maxlength="2"  class="field"/>
+          
         </td>
       </tr>
       <tr>
@@ -403,7 +399,7 @@ echo $ct["contestduration"]/60;
 echo "):</td>";
 ?>
         <td width="65%">
-          <input type="text" name="duration" value="<?php echo $st["siteduration"]/60; ?>" size="20" maxlength="20" />
+          <input type="text" name="duration" value="<?php echo $st["siteduration"]/60; ?>" size="20" maxlength="20"  class="field"/>
         </td>
       </tr>
       <tr>
@@ -413,7 +409,7 @@ echo $ct["contestlastmileanswer"]/60;
 echo "):</td>";
 ?>
         <td width="65%">
-          <input type="text" name="lastmileanswer" value="<?php echo $st["sitelastmileanswer"]/60; ?>" size="20" maxlength="20" />
+          <input type="text" name="lastmileanswer" value="<?php echo $st["sitelastmileanswer"]/60; ?>" size="20" maxlength="20"  class="field" />
         </td>
       </tr>
       <tr>
@@ -423,25 +419,25 @@ echo $ct["contestlastmilescore"]/60;
 echo "):</td>";
 ?>
         <td width="65%">
-          <input type="text" name="lastmilescore" value="<?php echo $st["sitelastmilescore"]/60; ?>" size="20" maxlength="20" />
+          <input type="text" name="lastmilescore" value="<?php echo $st["sitelastmilescore"]/60; ?>" size="20" maxlength="20"  class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Runs/clars that will be judged here (comma sep):</td>
         <td width="65%">
-          <input type="text" name="judging" value="<?php echo $st["sitejudging"]; ?>" size="20" maxlength="200" />
+          <input type="text" name="judging" value="<?php echo $st["sitejudging"]; ?>" size="20" maxlength="200" class="field"/>
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Tasks that will be treated here (comma sep):</td>
         <td width="65%">
-          <input type="text" name="tasking" value="<?php echo $st["sitetasking"]; ?>" size="20" maxlength="200" />
+          <input type="text" name="tasking" value="<?php echo $st["sitetasking"]; ?>" size="20" maxlength="200"  class="field"/>
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Username of the chief judge (if any):</td>
         <td width="65%">
-          <input type="text" name="chiefname" value="<?php echo $st["sitechiefname"]; ?>" size="20" maxlength="20" />
+          <input type="text" name="chiefname" value="<?php echo $st["sitechiefname"]; ?>" size="20" maxlength="20"  class="field" />
         </td>
       </tr>
       <tr>
@@ -469,7 +465,7 @@ echo "):</td>";
       <tr>
         <td width="35%" align=right>Global score:</td>
         <td width="65%">
-          <input type="text" name="globalscore" value="<?php echo $st["siteglobalscore"]; ?>" size="20" maxlength="50" />
+          <input type="text" name="globalscore" value="<?php echo $st["siteglobalscore"]; ?>" size="20" maxlength="50" type="text" class="field"/>
         </td>
       </tr>
       <tr>
@@ -498,7 +494,7 @@ echo "):</td>";
       <tr>
         <td width=\"35%\" align=right>Score level:</td>
         <td width="65%">
-          <input type="text" name="scorelevel" value="<?php echo $st["sitescorelevel"]; ?>" size="2" maxlength="2" />
+          <input type="text" name="scorelevel" value="<?php echo $st["sitescorelevel"]; ?>" size="2" maxlength="2" type="text" class="field"/>
         </td>
       </tr>
       <tr>
@@ -522,30 +518,37 @@ echo "):</td>";
 <?php
 		if($main || $site == $ct["contestlocalsite"]) {
 ?>
-      <input type="submit" name="Submit1" value="Send" onClick="conf()">
-      <input type="submit" name="Submit2" value="Start Now" onClick="conf()">
-      <input type="submit" name="Submit3" value="Stop Now" onClick="conf()">
-      <input type="reset" name="Submit4" value="Restore fields">
-<br>
-      <input type="submit" name="Logoff" value="Logoff all users" onClick="conf()">
-      <input type="submit" name="Logins" value="Disable logins" onClick="conf()">
-      <input type="submit" name="Logins" value="Enable logins" onClick="conf()">
+<br><br><br>
+      <input type="submit" name="Submit1" value="Send" onClick="conf()" type="submit" class="btn">
+      <input type="submit" name="Submit2" value="Start Now" onClick="conf()" type="submit" class="btn">
+      <input type="submit" name="Submit3" value="Stop Now" onClick="conf()" type="submit" class="btn">
+      <input type="reset" name="Submit4" value="Restore fields" type="submit" class="btn">
+<br><br><br>
+      <input type="submit" name="Logoff" value="Logoff all users" onClick="conf()" type="submit" class="btn">
+      <input type="submit" name="Logins" value="Disable logins" onClick="conf()" type="submit" class="btn">
+      <input type="submit" name="Logins" value="Enable logins" onClick="conf()" type="submit" class="btn">
 <br><br><br>
 
-      <input type="submit" name="SubmitDC" value="Delete ALL clars" onClick="conf2()">
-      <input type="submit" name="SubmitDR" value="Delete ALL runs" onClick="conf2()">
-      <input type="submit" name="SubmitDT" value="Delete ALL tasks" onClick="conf2()">
-      <input type="submit" name="SubmitDB" value="Delete ALL bkps" onClick="conf2()">
+      <input type="submit" name="SubmitDC" value="Delete ALL clars" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDR" value="Delete ALL runs" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDT" value="Delete ALL tasks" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDB" value="Delete ALL bkps" onClick="conf2()" type="submit" class="btn">
+      <br><br><br>
 <?php
 				}
 ?>
   </center>
 <center>
 <br />
+
 <table border=1>
+	<thead>
 <tr>
 <td nowrap width=\"50%\" align=right>Starting at</td><td nowrap width=\"50%\" align=left>Ending at</td>
+
 </tr>
+</thead>
+<tbody>
 <?php
 $n = count($sitetime);
 for ($i=0; $i< $n; $i++) {
@@ -565,7 +568,9 @@ for ($i=0; $i< $n; $i++) {
   echo "</tr>";
 }
 ?>
+</tbody>
 </table>
+
 </center>
 
 <?php
@@ -573,26 +578,24 @@ for ($i=0; $i< $n; $i++) {
 ?>
   <center>
     <table border="0">
+		<tbody>
       <tr>
 <td nowrap width="50%" align=right>
 (Do not use this button unless really necessary)
-  <input type="submit" name="endat" value="Stop At" onClick="conf()">:
+  <input type="submit" name="endat" value="Stop At" onClick="conf()"  type="submit" class="btn">:
 </td>
 <?php
 $w = $st["siteendeddate"];
 ?>
-        <td width="50%"> hh:mm
-          <input type="text" name="enddateh" value="<?php echo date("H", $w); ?>" size="2" maxlength="2" />
-          :
-          <input type="text" name="enddatemin" value="<?php echo date("i", $w); ?>" size="2" maxlength="2" />
+        <td width="50%"> hh:mm:ss
+          <input type="time" name="enddateh" value="<?php echo date("H", $w) . ":" . date("i", $w); ?>" size="2" maxlength="2" class="field" />
+         
             dd/mm/yyyy
-          <input type="text" name="enddated" value="<?php echo date("d", $w); ?>" size="2" maxlength="2" />
-          /
-          <input type="text" name="enddatem" value="<?php echo date("m", $w); ?>" size="2" maxlength="2" />
-          /
-          <input type="text" name="enddatey" value="<?php echo date("Y", $w); ?>" size="4" maxlength="4" />
+          <input type="date" name="enddated" value="<?php echo date("Y", $w) . "-" . date("m", $w) . "-" . date("d", $w); ?>" size="2" maxlength="2" class="field" />
+         
         </td>
       </tr>
+      </tbody>
   </table>
   </center>
 <?php
@@ -605,20 +608,25 @@ if($main) {
       <tr>
         <td width="25%" align=right>Import file:</td>
         <td width="75%">
-          <input type="file" name="importfile" size="40">
+          <input type="file" name="importfile" size="40" class="btn">
+          
         </td>
       </tr>
     </table>
-      <input type="submit" name="Submit" value="Import" onClick="conf()">
+      <input type="submit" name="Submit" value="Import" onClick="conf()" class="btn">
   </center>
+  <br>
 		<?php } ?>
 </form>
+</section>
+<br><br>
 <div id="normal">
 <div id="popupnew">
 <form action="site.php" id="formnew" method="get" name="formnew">
 <h2>Choose site number</h2>
-<input id="new" name="Number" placeholder="new" type="text">
-<input type="submit" name="Go" value="Go">
+<input id="new" name="Number" placeholder="new" type="number" class="field">
+<input type="submit" name="Go" value="Go" class="btn">
+<br><br>
 </form>
 </div>
 </div>
