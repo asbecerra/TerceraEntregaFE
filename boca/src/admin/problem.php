@@ -426,10 +426,12 @@ To replace the data of a problem, proceed as if it did not exist (data will be r
       </tr>
 -->
       <tr>
+		  <form action="/action_page.php">
         <td width="35%" align=right>Color name:</td>
         <td width="40%">
-          <input type="text" name="colorname" value="" size="40" maxlength="100"  class="field"/>
+          <input type="color" name="colorname" value="#ff0000" size="40" maxlength="30"  class="field"/>
         </td>
+        </form>
       </tr>
       <tr>
         <td width="35%" align=right>Color (RGB HTML format):</td>

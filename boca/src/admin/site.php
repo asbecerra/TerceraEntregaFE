@@ -606,8 +606,8 @@ if($main) {
   <center>
     <table border="0">
       <tr>
-        <td width="25%" align=right>Import file:</td>
-        <td width="75%">
+        <td width="35%" align=right>Import file:</td>
+        <td width="40%">
           <input type="file" name="importfile" size="40" class="btn">
           
         </td>
