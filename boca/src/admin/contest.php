@@ -282,17 +282,20 @@ echo $contest;
   </center>
   <center>
 <?php if($main) { ?>
-	  <input type="submit" name="Submit3" value="Update" onClick="conf()">
-	   <input type="submit" name="Submit3" value="Update Contest and All Sites" onClick="conf2()">
-	   <input type="reset" name="Submit4" value="Clear">
+	<br><br>
+	  <input type="submit" name="Submit3" value="Update" onClick="conf()" type="submit" class="btn">
+	   <input type="submit" name="Submit3" value="Update Contest and All Sites" onClick="conf2()" type="submit" class="btn">
+	   <input type="reset" name="Submit4" value="Clear" type="submit" class="btn">
 <br><br>
-      <input type="submit" name="SubmitDC" value="Delete ALL clars" onClick="conf2()">
-      <input type="submit" name="SubmitDR" value="Delete ALL runs" onClick="conf2()">
-      <input type="submit" name="SubmitDT" value="Delete ALL tasks" onClick="conf2()">
-      <input type="submit" name="SubmitDB" value="Delete ALL bkps" onClick="conf2()">
+      <input type="submit" name="SubmitDC" value="Delete ALL clars" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDR" value="Delete ALL runs" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDT" value="Delete ALL tasks" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDB" value="Delete ALL bkps" onClick="conf2()" type="submit" class="btn">
+      <br><br>
 <?php } else { ?>
-      <input type="submit" name="Submit3" value="Update" onClick="conf()">
+      <input type="submit" name="Submit3" value="Update" onClick="conf()" >
 	   <input type="submit" name="Submit3" value="Become Main Site" onClick="conf3()">
+	   <br><br>
 <?php } ?>
 </section>
 </center>
