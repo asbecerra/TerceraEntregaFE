@@ -40,7 +40,7 @@ else
  <!--   <td><b>AJ</b></td> -->
 <!--    <td><b><a href="<?php echo $runphp; ?>?order=answer">Answer</a></b></td> -->
  <!--  </tr> -->
- <section style="padding: 30px; padding-bottom: 30%">
+ <section style="padding: 5px; padding-bottom: 5%">
  <table width="100%" border="1">
  <thead><tr>
   <td><b>Run #</b></td>
@@ -56,43 +56,10 @@ else
  </tr>
  </thead>
 <tbody>
- <tr>
-  <td><b>1</b></td>
-  <td><b>Abc</b></td>
-  <td><b>Luis</b></td>
-  <td><b>12:25</b></td>
-  <td><b>123</b></td>
-  <td><b>C++</b></td>
-  <td><b>Completed</b></td>
-  <td><b>Succesfull</b></td>
-  <td><b>AJ</b></td>
-  <td><b>OK</b></td>
- </tr>
- <tr>
-  <td><b>2</b></td>
-  <td><b>Abc</b></td>
-  <td><b>Leandro</b></td>
-  <td><b>12:28</b></td>
-  <td><b>123</b></td>
-  <td><b>Java</b></td>
-  <td><b>Completed</b></td>
-  <td><b>Succesfull</b></td>
-  <td><b>AJ</b></td>
-  <td><b>OK</b></td>
- </tr>
- <tr>
-  <td><b>2</b></td>
-  <td><b>Abc</b></td>
-  <td><b>Anyela</b></td>
-  <td><b>12:28</b></td>
-  <td><b>123</b></td>
-  <td><b>Java</b></td>
-  <td><b>Completed</b></td>
-  <td><b>Succesfull</b></td>
-  <td><b>AJ</b></td>
-  <td><b>OK</b></td>
- </tr>
-</tbody>
+	
+	
+	
+ </tbody>
 </table>
 </section>
  
