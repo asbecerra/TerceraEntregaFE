@@ -37,9 +37,14 @@ require_once("$locr/db.php");
 
 if(!isset($_POST['noflush'])) {
 	require_once("$locr/version.php");
-	echo "<html><head><title>Admin's Page</title>\n";
+	echo "<html><head><title>BOCA Administrador en línea de Olimpiadas de Programación - Admin</title>\n";
 	echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
 	echo "<link rel=stylesheet href=\"$loc/Css.php\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/estilos.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/formularios.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/boton.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/desplegables.css\" type=\"text/css\">\n";
+	echo "<link rel=stylesheet href=\"../css/tablas.css\" type=\"text/css\">\n";
 }
 
 if(!ValidSession()) {
@@ -58,7 +63,81 @@ if ((isset($_GET["Submit1"]) && $_GET["Submit1"] == "Transfer") ||
 
 if(!isset($_POST['noflush'])) {
 	echo "</head><body id=\"body\"><table border=1 width=\"100%\">\n";
-	echo "<tr><td nowrap bgcolor=\"eeee00\" align=center>";
+	echo "<header>\n";
+	echo "<img src=\"../img/banner.jpg\" width=\"80%\" left=\"20%\">\n";
+	echo "<div id=\"header\">\n";
+	echo "<ul class=\"nav\">\n";
+	echo "<li><a href=\"Admin.html\">Home</a></li>\n";
+	echo "<li><a href=\"\">Competition</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=run.php>Runs</a></li>\n";
+			echo "<li><a href=score.php>Score</a></li>\n";
+			echo "<li><a href=clar.php>Clarifications</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";
+	echo "<li><a href=\"\">Users</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=problem.php>Problems</a></li>\n";
+			echo "<li><a href=answer.php>Answers</a></li>\n";
+			echo "<li><a href=misc.php>Misc</a></li>\n";
+			echo "<li><a href=task.php>Task</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";		
+	echo "<li><a href=\"\">Options</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=site.php>Site</a></li>\n";
+			echo "<li><a href=contest.php>Contest</a></li>\n";
+			echo "<li><a href=log.php>Logs</a></li>\n";
+			echo "<li><a href=language.php>Languajes</a></li>\n";
+			echo "<li><a href=files.php>BackUps</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";
+	echo "<li><a href=\"\">Reports</a>\n";
+		echo "<ul class=\"sub\">\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=2', ".
+		"'Complete Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=0', ".
+		"'Complete Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Detailed Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=0&hor=0', ".
+		"'Complete Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Interactive Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/score.php?p=1', ".
+		"'Public Scoreboard','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Delayed Scoreboard</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/run.php', ".
+		"'Run List','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Run List</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/clar.php', ".
+		"'Clarification List','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Clarification List</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/task.php', ".
+		"'Task List','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Task List</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/site.php', ".
+		"'Start/Stop Logs','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Site Star/Stop Logs</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/icpc.php', ".
+		"'ICPC File','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">ICPC File</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/webcast.php', ".
+		"'Webcast File','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">WebCast File</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/s4ris.php', ".
+		"'S4ris File','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">S4RIS File</a></li>\n";
+			echo "<li><a href=\"#\" class=menu style=\"font-weight:bold\" onClick=\"window.open('report/stat.php', ".
+		"'Problem Statistics','width=800,height=600,scrollbars=yes,toolbar=yes,menubar=yes,".
+		"resizable=yes')\">Statistics</a></li>\n";
+		echo "</ul>\n";
+	echo "</li>\n";
+	echo "<li class=\"item-r\"><a href=$loc/index.php>Logout</a></li>\n";
+	echo "</ul>\n";
+	echo "</div>\n";
+	echo "</header>\n";
+
+	/*echo "<tr><td nowrap bgcolor=\"eeee00\" align=center>";
 	echo "<img src=\"../images/smallballoontransp.png\" alt=\"\">";
 	echo "<font color=\"#000000\">BOCA</font>";
 	echo "</td><td bgcolor=\"#eeee00\" width=\"99%\">\n";
@@ -87,6 +166,7 @@ if(!isset($_POST['noflush'])) {
 	echo "  <td align=center><a class=menu style=\"font-weight:bold\" href=option.php>Options</a></td>\n";
 	echo "  <td align=center><a class=menu style=\"font-weight:bold\" href=$loc/index.php>Logout</a></td>\n";
 	echo " </tr>\n"; 
-	echo "</table>\n";
+	echo "</table>\n";*/
 }
+
 ?>

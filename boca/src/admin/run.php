@@ -28,25 +28,41 @@ else
 }
 ?>
 
-<form name="form1" method="post" action="<?php echo $runphp; ?>">
-  <input type=hidden name="confirmation" value="noconfirm" />
-<br>
-<table width="100%" border=1>
- <tr>
-  <td><b><a href="<?php echo $runphp; ?>?order=run">Run #</a></b></td>
-  <td><b><a href="<?php echo $runphp; ?>?order=site">Site</a></b></td>
 <?php if($runphp == "run.php") { ?>
-  <td><b><a href="<?php echo $runphp; ?>?order=user">User</a></b></td>
+  
 <?php } ?>
-  <td><b>Time</b></td>
-  <td><b><a href="<?php echo $runphp; ?>?order=problem">Problem</a></b></td>
-  <td><b><a href="<?php echo $runphp; ?>?order=language">Language</a></b></td>
+  <!--  <td><b>Time</b></td> -->
+  <!--  <td><b><a href="<?php echo $runphp; ?>?order=problem">Problem</a></b></td> -->
+  <!--  <td><b><a href="<?php echo $runphp; ?>?order=language">Language</a></b></td> -->
 <!--  <td><b>Filename</b></td> -->
-  <td><b><a href="<?php echo $runphp; ?>?order=status">Status</a></b></td>
-  <td><b><a href="<?php echo $runphp; ?>?order=judge">Judge (Site)</a></b></td>
+ <!--   <td><b><a href="<?php echo $runphp; ?>?order=status">Status</a></b></td> -->
+ <!--   <td><b><a href="<?php echo $runphp; ?>?order=judge">Judge (Site)</a></b></td> -->
+ <!--   <td><b>AJ</b></td> -->
+<!--    <td><b><a href="<?php echo $runphp; ?>?order=answer">Answer</a></b></td> -->
+ <!--  </tr> -->
+ <section style="padding: 3x; padding-bottom: 3%">
+ <table width="80%" border="1">
+ <thead><tr>
+  <td><b>Run #</b></td>
+  <td><b>Site</b></td>
+  <td><b>User</b></td>
+  <td><b>Time</b></td>
+  <td><b>Problem</b></td>
+  <td><b>languaje</b></td>
+  <td><b>Status</b></td>
+  <td><b>Judge (Site)</b></td>
   <td><b>AJ</b></td>
-  <td><b><a href="<?php echo $runphp; ?>?order=answer">Answer</a></b></td>
+  <td><b>Answer</b></td>
  </tr>
+ </thead>
+<tbody>
+	
+	
+	
+ </tbody>
+</table>
+</section>
+ 
 <?php
 if (($s=DBSiteInfo($_SESSION["usertable"]["contestnumber"],$_SESSION["usertable"]["usersitenumber"])) == null)
         ForceLoad("../index.php");
@@ -158,26 +174,13 @@ for ($i=0; $i<count($run); $i++) {
 }
 
 echo "</table>";
-if (count($run) == 0) echo "<br><center><b><font color=\"#ff0000\">NO RUNS AVAILABLE</font></b></center>";
+if (count($run) == 0) echo "<br><center><b><font color=\"#ECFF00\">NO RUNS AVAILABLE</font></b></center>";
 else {
 ?>
-  <br>
-  <script language="javascript">
-    function conf() {
-      if (confirm("Confirm?")) {
-        document.form1.confirmation.value='confirm';
-      }
-    }
-  </script>
-  <center>
-<b>Click on the number of a run to edit it or select them with<br />the checkboxes and use the buttons to work on multiple runs:</b><br /><br />
-      <input type="submit" name="auto" value="Re-run autojudge for selected runs" onClick="conf()">
-      <input type="submit" name="open" value="Open selected runs for rejudging" onClick="conf()">
-<br><br>
-  </center>
-  </form>
+
 <?php
 }
 ?>
+
 </body>
 </html>

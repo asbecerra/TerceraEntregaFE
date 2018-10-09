@@ -58,12 +58,15 @@ if (isset($_POST["Submit3"]) && isset($_POST["langnumber"]) && is_numeric($_POST
       }
     }
   </script>
+  <br><br>
 <table width="100%" border=1>
+ <thead>
  <tr>
   <td><b>Language #</b></td>
   <td><b>Name</b></td>
   <td><b>Extension</b></td>
  </tr>
+ </thead>
 <?php
 $lang = DBGetLanguages($_SESSION["usertable"]["contestnumber"]);
 $cf = globalconf();
@@ -85,7 +88,7 @@ WARNING: deleting a language will remove EVERYTHING related to it.<br>
 It is NOT recommended to change anything while the contest is running.<br>
 </b></center>
 
-<form name="form1" enctype="multipart/form-data" method="post" action="language.php">
+
   <input type=hidden name="confirmation" value="noconfirm" />
   <script language="javascript">
     function conf() {
@@ -101,24 +104,25 @@ Note that any changes will overwrite the already defined data.<br><br>
     <table border="0">
       <tr>
         <td width="35%" align=right>Number:</td>
-        <td width="65%">
-          <input type="text" name="langnumber" value="" size="20" maxlength="20" />
+        <td width="45%">
+          <input type="text" name="langnumber" value="" size="20" maxlength="20" class="field"/>
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Name:</td>
-        <td width="65%">
-          <input type="text" name="langname" value="" size="20" maxlength="20" />
+        <td width="45%">
+          <input type="text" name="langname" value="" size="20" maxlength="20" class="field"/>
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Extension:</td>
-        <td width="65%">
-          <input type="text" name="langextension" value="" size="20" maxlength="20" />
+        <td width="45%">
+          <input type="text" name="langextension" value="" size="20" maxlength="20" class="field"/>
         </td>
       </tr>
     </table>
   </center>
+  <br><br>
   <center>
       <input type="submit" name="Submit3" value="Send" onClick="conf()">
       <input type="reset" name="Submit4" value="Clear">

@@ -172,7 +172,9 @@ flow. ARE YOU SURE?")) {
   </script>
   <br><br>
   <center>
+	<section style="padding: 1px; padding-bottom: 1%">
     <table border="0">
+	<thead>
       <tr>
         <td width="35%" align=right>Contest number:</td>
         <td width="65%">
@@ -181,55 +183,52 @@ echo $contest;
 ?>
         </td>
       </tr>
+      </thead>
+      <tbody>
       <tr>
         <td width="35%" align=right>Name:</td>
         <td width="65%">
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="name" value="<?php echo $ct["contestname"]; ?>" size="50" maxlength="50" />
+          <input type="text" <?php if(!$main) echo "readonly"; ?> name="name" value="<?php echo $ct["contestname"]; ?>" size="50" maxlength="50" type="text" class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Start date:</td>
-        <td width="65%"> hh:mm
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdateh" value="<?php echo date("H", $ct["conteststartdate"]); ?>" size="2" maxlength="2" />
-          :
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdatemin" value="<?php echo date("i", $ct["conteststartdate"]); ?>" size="2" maxlength="2" />
-          &nbsp; &nbsp; dd/mm/yyyy
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdated" value="<?php echo date("d", $ct["conteststartdate"]); ?>" size="2" maxlength="2" />
-          /
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdatem" value="<?php echo date("m", $ct["conteststartdate"]); ?>" size="2" maxlength="2" />
-          /
-          <input type="text" <?php if(!$main) echo "readonly"; ?> name="startdatey" value="<?php echo date("Y", $ct["conteststartdate"]); ?>" size="4" maxlength="4" />
+        <td width="30%"> 
+          <input type="time" <?php if(!$main) echo "readonly"; ?> name="startdateh" value="<?php echo date("H", $ct["conteststartdate"]) . ":" . date("i", $ct["conteststartdate"]);?>" size="2" maxlength="2" class="field"/>
+          
+          <input type="date" <?php if(!$main) echo "readonly"; ?> name="startdated" value="<?php echo date("Y", $ct["conteststartdate"]) . "-" . date("m", $ct["conteststartdate"]) . "-" . date("d", $ct["conteststartdate"]); ?>" size="2" maxlength="2" class="field"/>
+         
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Duration (in minutes):</td>
         <td width="65%">
-          <input type="text" name="duration" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestduration"]/60; ?>" size="20" maxlength="20" />
+          <input type="text" name="duration" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestduration"]/60; ?>" size="20" maxlength="20" class="field"/>
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Stop answering (in minutes):</td>
         <td width="65%">
-          <input type="text" name="lastmileanswer" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestlastmileanswer"]/60; ?>" size="20" maxlength="20" />
+          <input type="text" name="lastmileanswer" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestlastmileanswer"]/60; ?>" size="20" maxlength="20" class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Stop scoreboard (in minutes):</td>
         <td width="65%">
-          <input type="text" name="lastmilescore" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestlastmilescore"]/60; ?>" size="20" maxlength="20" />
+          <input type="text" name="lastmilescore" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestlastmilescore"]/60; ?>" size="20" maxlength="20"  class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Penalty (in minutes):</td>
         <td width="65%">
-          <input type="text" name="penalty" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestpenalty"]/60; ?>" size="20" maxlength="20" />
+          <input type="text" name="penalty" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestpenalty"]/60; ?>" size="20" maxlength="20"  class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Max file size allowed for teams (in KB):</td>
         <td width="65%">
           <input type="text" name="maxfilesize" <?php if(!$main) echo "readonly"; ?> 
-		value="<?php echo $ct["contestmaxfilesize"]/1000; ?>" size="20" maxlength="20" />
+		value="<?php echo $ct["contestmaxfilesize"]/1000; ?>" size="20" maxlength="20" class="field" />
         </td>
       </tr>
   <tr><td width="35%" align=right>
@@ -244,7 +243,7 @@ echo $contest;
       <tr>
 							<td width="35%" align=right>Main site URL (IP/bocafolder):</td>
         <td width="65%">
-          <input type="text" name="mainsiteurl" value="<?php echo $ct["contestmainsiteurl"]; ?>" size="40" maxlength="200" />
+          <input type="text" name="mainsiteurl" value="<?php echo $ct["contestmainsiteurl"]; ?>" size="40" maxlength="200" class="field" />
         </td>
       </tr>
 <?php
@@ -255,7 +254,7 @@ echo $contest;
       <tr>
 							<td width="35%" align=right>Unlock password (only use it within a <b>secure network</b>):</td>
         <td width="65%">
-          <input type="password" name="unlockkey" value="" size="40" maxlength="200" />
+          <input type="password" name="unlockkey" value="" size="40" maxlength="200"  class="field"/>
 		   <?php if(strlen($ct["contestunlockkey"]) > 1) echo "<b><= has been set</b>"; ?>
         </td>
       </tr>
@@ -269,32 +268,38 @@ echo $contest;
       <tr>
         <td width="35%" align=right>Contest main site number:</td>
         <td width="65%">
-          <input type="text" name="mainsite" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestmainsite"]; ?>" size="4" maxlength="4" />
+          <input type="text" name="mainsite" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestmainsite"]; ?>" size="4" maxlength="4" class="field" />
         </td>
       </tr>
       <tr>
         <td width="35%" align=right>Contest local site number:</td>
         <td width="65%">
-          <input type="text" name="localsite" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestlocalsite"]; ?>" size="4" maxlength="4" />
+          <input type="text" name="localsite" <?php if(!$main) echo "readonly"; ?> value="<?php echo $ct["contestlocalsite"]; ?>" size="4" maxlength="4" class="field" />
         </td>
       </tr>
+      </tbody>
     </table>
   </center>
   <center>
 <?php if($main) { ?>
-	  <input type="submit" name="Submit3" value="Update" onClick="conf()">
-	   <input type="submit" name="Submit3" value="Update Contest and All Sites" onClick="conf2()">
-	   <input type="reset" name="Submit4" value="Clear">
+	<br><br>
+	  <input type="submit" name="Submit3" value="Update" onClick="conf()" type="submit" class="btn">
+	   <input type="submit" name="Submit3" value="Update Contest and All Sites" onClick="conf2()" type="submit" class="btn">
+	   <input type="reset" name="Submit4" value="Clear" type="submit" class="btn">
 <br><br>
-      <input type="submit" name="SubmitDC" value="Delete ALL clars" onClick="conf2()">
-      <input type="submit" name="SubmitDR" value="Delete ALL runs" onClick="conf2()">
-      <input type="submit" name="SubmitDT" value="Delete ALL tasks" onClick="conf2()">
-      <input type="submit" name="SubmitDB" value="Delete ALL bkps" onClick="conf2()">
+      <input type="submit" name="SubmitDC" value="Delete ALL clars" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDR" value="Delete ALL runs" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDT" value="Delete ALL tasks" onClick="conf2()" type="submit" class="btn">
+      <input type="submit" name="SubmitDB" value="Delete ALL bkps" onClick="conf2()" type="submit" class="btn">
+      <br><br>
 <?php } else { ?>
-      <input type="submit" name="Submit3" value="Update" onClick="conf()">
+      <input type="submit" name="Submit3" value="Update" onClick="conf()" >
 	   <input type="submit" name="Submit3" value="Become Main Site" onClick="conf3()">
+	   <br><br>
 <?php } ?>
-	   </center>
+</section>
+</center>
+	   
 </form>
 
 </body>

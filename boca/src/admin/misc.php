@@ -18,7 +18,7 @@
 //Last updated 24/oct/2017 by cassio@ime.usp.br
 require 'header.php';
 ?>
-<br>
+<br><br>
 <form name="form1" enctype="multipart/form-data" method="get" action="misc.php">
   <input type=hidden name="confirmation" value="noconfirm" />
   <script language="javascript" type="text/javascript">
@@ -36,13 +36,13 @@ require 'header.php';
     }
    </script>
    <center>
-   <input type="submit" name="Submit1" value="Transfer" onClick="conf()"> &nbsp;
-   <input type="submit" name="Submit2" value="Transfer all" onClick="conf()"> &nbsp;
-   <input type="submit" name="Submit3" value="Transfer scores"> &nbsp;
-   <input type="submit" name="Submit4" value="Clear cache" onClick="conf()"> &nbsp; 
-   <input type="submit" name="Submit5" value="Full clear" onClick="conf2()">  &nbsp;
-   <input type="submit" name="Submit6" value="Update BOCA" onClick="conf2()">  &nbsp;
-   <input type="submit" name="Submit7" value="Revert Update" onClick="conf2()"> 
+   <input type="submit" name="Submit1" value="Transfer" onClick="conf()" class="btn"> <br/>
+   <input type="submit" name="Submit2" value="Transfer all" onClick="conf()" class="btn"> <br/> 
+   <input type="submit" name="Submit3" value="Transfer scores" class="btn"> <br/> 
+   <input type="submit" name="Submit4" value="Clear cache" onClick="conf()" class="btn"> <br/>  
+   <input type="submit" name="Submit5" value="Full clear" onClick="conf2()"class="btn"> <br/>  
+   <input type="submit" name="Submit6" value="Update BOCA" onClick="conf2()" class="btn"> <br/>  
+   <input type="submit" name="Submit7" value="Revert Update" onClick="conf2()" class="btn">  
   </center>
 </form>
 <pre>

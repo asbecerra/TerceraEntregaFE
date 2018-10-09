@@ -40,17 +40,19 @@ else $limit = 50;
 $log = DBGetLogs($order, $_SESSION["usertable"]["contestnumber"], 
 		$site, $user, $type, $ip, $limit);
 ?>
-<br>
+<br><br>
 <table width="100%" border=1>
+<thead>
  <tr>
-  <td><b><a href="log.php?order=site&limit=<?php echo $limit; ?>">Site</a></b></td>
-  <td nowrap><b><a href="log.php?order=user&limit=<?php echo $limit; ?>">User #</a></b></td>
-  <td><b><a href="log.php?order=ip&limit=<?php echo $limit; ?>">IP</a></b></td>
-  <td><b><a href="log.php?order=type&limit=<?php echo $limit; ?>">Type</a></b></td>
+  <td><b><a href="log.php?order=site&limit=<?php echo $limit; ?>" style="color: #FFFFFF">Site</a></b></td>
+  <td nowrap><b><a href="log.php?order=user&limit=<?php echo $limit; ?>" style="color: #FFFFFF">User #</a></b></td>
+  <td><b><a href="log.php?order=ip&limit=<?php echo $limit; ?>" style="color: #FFFFFF">IP</a></b></td>
+  <td><b><a href="log.php?order=type&limit=<?php echo $limit; ?>" style="color: #FFFFFF">Type</a></b></td>
   <td><b>Date</b></td>
   <td><b>Description</b></td>
   <td><b>Status</b></td>
  </tr>
+</thead>
 <?php
 for ($i=0; $i<count($log); $i++) {
   echo " <tr>\n";

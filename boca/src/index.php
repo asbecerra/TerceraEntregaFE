@@ -54,18 +54,21 @@ ob_end_flush();
 require_once('version.php');
 
 ?>
-<title>BOCA Online Contest Administrator <?php echo $BOCAVERSION; ?> - Login</title><head>
+<title>BOCA Administrador en línea de Olimpiadas de Programación <?php echo $BOCAVERSION; ?> - Login</title><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel=stylesheet href="Css.php" type="text/css">
+<link rel="stylesheet" href="css/estilos.css" type="text/css">
+<link rel="stylesheet" href="css/formularios.css" type="text/css">
+<link rel="stylesheet" href="css/boton.css" type="text/css">
 <script language="JavaScript" src="sha256.js"></script>
 <script language="JavaScript">
 function computeHASH()
 {
 	var userHASH, passHASH;
-	userHASH = document.form1.name.value;
-	passHASH = js_myhash(js_myhash(document.form1.password.value)+'<?php echo session_id(); ?>');
-	document.form1.name.value = '';
-	document.form1.password.value = '                                                                                 ';
+	userHASH = document.formIngreso.name.value;
+	passHASH = js_myhash(js_myhash(document.formIngreso.password.value)+'<?php echo session_id(); ?>');
+	document.formIngreso.name.value = '';
+	document.formIngreso.password.value = '                                                                                 ';
 	document.location = 'index.php?name='+userHASH+'&password='+passHASH;
 }
 </script>
@@ -105,44 +108,21 @@ if(function_exists("globalconf") && function_exists("sanitizeVariables")) {
 }
 ?>
 </head>
-<body onload="document.form1.name.focus()">
-<table width="100%" height="100%" border="0">
-  <tr align="center" valign="middle"> 
-    <td> 
-      <form name="form1" action="javascript:computeHASH()">
-        <div align="center"> 
-          <table border="0" align="center">
-            <tr> 
-              <td nowrap>
-                <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="+1">
-				BOCA Login</font></div>
-              </td>
-            </tr>
-            <tr>
-              <td valign="top"> 
-                <table border="0" align="left">
-                  <tr> 
-                    <td><font face="Verdana, Arial, Helvetica, sans-serif" > 
-                      Name
-                      </font></td>
-                    <td> 
-                      <input type="text" name="name">
-                    </td>
-                  </tr>
-                  <tr> 
-                    <td><font face="Verdana, Arial, Helvetica, sans-serif" >Password</font></td>
-                    <td> 
-                      <input type="password" name="password">
-                    </td>
-                  </tr>
-                </table>
-                <input type="submit" name="Submit" value="Login">
-              </td>
-            </tr>
-          </table>
-        </div>
-      </form>
-    </td>
-  </tr>
-</table>
+<body onload="document.formIngreso.name.focus()">
+<header>
+	<img src="img/banner.jpg" width="80%" left="20%">
+</header>
+<section style="padding: 30px; padding-bottom: 30%">
+<form method="post" name="formIngreso" action="javascript:computeHASH()">
+	<p>Login:</p>
+	<input type="text" class="field" name="name"> <br/>
+	<p>Password:</p>
+	<input type="password" class="field" name="password"> <br/>
+	<p class="center-content">
+		<input type="submit" class="btn btn-green" value="Login" >
+	</p>
+</form>
+</section>
+
+
 <?php include('footnote.php'); ?>
