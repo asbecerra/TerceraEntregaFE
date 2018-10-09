@@ -66,17 +66,20 @@ if (isset($_GET["done"]) && is_numeric($_GET["done"]) && isset($_GET["site"]) &&
 //      }
     }
   </script>
+  <br><br>
 <table width="100%" border=1>
+	<thead>
  <tr>
-  <td><b><a href="task.php?order=task">Task #</a></b></td>
+  <td><b><a href="task.php?order=task" style="color: #FFFFFF">Task #</a></b></td>
   <td><b>Time</b></td>
-  <td><b><a href="task.php?order=user">User / Site</a></b></td>
-  <td><b><a href="task.php?order=description">Description</a></b></td>
+  <td><b><a href="task.php?order=user" style="color: #FFFFFF">User / Site</a></b></td>
+  <td><b><a href="task.php?order=description" style="color: #FFFFFF">Description</a></b></td>
   <td><b>File</b></td>
-  <td><b><a href="task.php?order=staff">Staff / Site</a></b></td>
-  <td><b><a href="task.php?order=status">Status</a></b></td>
+  <td><b><a href="task.php?order=staff" style="color: #FFFFFF">Staff / Site</a></b></td>
+  <td><b><a href="task.php?order=status" style="color: #FFFFFF">Status</a></b></td>
   <td><b>Actions</b></td>
  </tr>
+ </thead>
 <?php
 if (($s=DBSiteInfo($_SESSION["usertable"]["contestnumber"],$_SESSION["usertable"]["usersitenumber"])) == null)
         ForceLoad("../index.php");
@@ -141,7 +144,7 @@ for ($i=0; $i<count($task); $i++) {
   echo "</td>\n";
 }
 echo "</table>";
-if (count($task) == 0) echo "<br><center><b><font color=\"#ff0000\">NO TASKS FOUND</font></b></center>";
+if (count($task) == 0) echo "<br><center><b><font color=\"#ECFF00\">NO TASKS FOUND</font></b></center>";
 
 ?>
 
